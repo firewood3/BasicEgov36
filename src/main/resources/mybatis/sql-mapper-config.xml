@@ -4,5 +4,6 @@
 <configuration>
     <typeAliases>
         <typeAlias alias="board" type="com.gchsj.board.domain.Board"/>
+        <typeAlias alias="user" type="com.gchsj.user.domain.User"/>
     </typeAliases>
 </configuration>

@@ -24,4 +24,18 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**" />
+            <mvc:exclude-mapping path="/board"/>
+            <bean class="com.gchsj.interceptor.CommonInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/board" />
+            <bean class="com.gchsj.interceptor.BoardInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

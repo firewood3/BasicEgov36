@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class IndexController {
-    public static Logger logger  = LogManager.getFormatterLogger(IndexController.class);
+
+    private static Logger logger  = LogManager.getFormatterLogger(IndexController.class);
 
     @Autowired
     private IndexService indexService;

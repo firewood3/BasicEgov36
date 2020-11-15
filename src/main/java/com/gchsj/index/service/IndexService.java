@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class IndexService {
 
-    public static Logger logger  = LogManager.getFormatterLogger(IndexService.class);
+    private static Logger logger  = LogManager.getFormatterLogger(IndexService.class);
 
     public void check() {
         logger.info("index service~");

@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class BoardService {
 
-    public static final Logger LOGGER = LogManager.getFormatterLogger(BoardService.class);
+    private static final Logger LOGGER = LogManager.getFormatterLogger(BoardService.class);
 
     @Autowired
     private BoardMapper boardMapper;
@@ -21,8 +21,7 @@ public class BoardService {
         LOGGER.info("board service~");
     }
 
-    public void selectList() {
-        List<Board> boardList = boardMapper.selectList();
-        boardList.forEach(board -> LOGGER.info(board.toString()));
+    public List<Board> selectList() {
+        return boardMapper.selectList();
     }
 }

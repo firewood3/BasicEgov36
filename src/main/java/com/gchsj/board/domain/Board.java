@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Board {
-    private String id;
+    private Long id;
     private String title;
     private String content;
 }
