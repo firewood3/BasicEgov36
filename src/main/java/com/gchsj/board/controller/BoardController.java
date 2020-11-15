@@ -20,6 +20,7 @@ public class BoardController {
     public String board() {
         LOGGER.info("board controller~");
         boardService.check();
+        boardService.selectList();
         return "board";
     }
 }

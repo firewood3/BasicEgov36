@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<!-- DataSource -->
+    <alias name="dataSource-${AppConf.db.DbType}" alias="dataSource"/>
+
+	<!-- MYSQL -->
+	<bean id="dataSource-mysql" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${AppConf.db.DriverClassName}"/>
+		<property name="url" value="${AppConf.db.Url}" />
+		<property name="username" value="${AppConf.db.UserName}"/>
+		<property name="password" value="${AppConf.db.Password}"/>
+
+		<!-- 특정 시간마다 validationQuery를 실행 셋팅 시작 -->
+		<property name="validationQuery" value="select 1"/>
+		<property name="testWhileIdle" value="true"/>
+		<property name="timeBetweenEvictionRunsMillis" value="7200000"/>
+		<!-- 특정 시간마다 validationQuery를 실행 셋팅 끝 -->
+	</bean>
+
+</beans>
